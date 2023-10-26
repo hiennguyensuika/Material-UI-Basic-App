@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
@@ -8,12 +8,11 @@ import InputLabel from "@mui/material/InputLabel";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
-import AuthContext from "../auth/AuthContext";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 const style = {
-  bgcolor: "background.paper",
+  bgColor: "background.paper",
   display: "flex",
   flexDirection: "column",
   width: "300px",
@@ -26,14 +25,10 @@ function LoginForm({ callback }) {
   const [username] = useState("Aloha");
   const [password] = useState("123");
 
-  const auth = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
-  };
-  const handleLogin = () => {
-    auth.singin(username, callback);
   };
 
   return (
@@ -71,7 +66,6 @@ function LoginForm({ callback }) {
         />
       </FormControl>
       <Button
-        onClick={handleLogin}
         sx={{ m: 1, width: "10ch" }}
         variant="contained"
       >

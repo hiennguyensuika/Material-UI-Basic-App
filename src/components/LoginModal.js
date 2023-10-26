@@ -1,10 +1,6 @@
-import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import LoginForm from "./LoginForm";
 import { useNavigate } from "react-router-dom";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
 import Box from "@mui/material/Box";
 
 const style = {
@@ -12,7 +8,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  bgcolor: "background.paper",
+  bgColor: "background.paper",
   borderRadius: 2,
   boxShadow: 24,
   border: "none",

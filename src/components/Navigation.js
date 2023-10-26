@@ -50,8 +50,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function Navigation() {
-  // {* const [searchParams, setSearchParams] = useSearchParams();*}
-  // {const q = searchParams.get("q");}
   
   //Define light and dark theme
   const lightTheme = createTheme();
@@ -93,9 +91,7 @@ function Navigation() {
                 <SearchIcon />
               </SearchIconWrapper>
               <StyledInputBase
-                // name="q"
                 placeholder="Search"
-                //defaultValue={q ?? undefined}
                 inputProps={{ "arial-label": "search" }}
               />
             </Search>

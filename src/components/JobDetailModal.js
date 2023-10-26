@@ -14,7 +14,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: { xs: "90%", md: 600 },
-  bgcolor: "background.paper",
+  bgColor: "background.paper",
   borderRadius: 2,
   border: "none",
 };
@@ -31,7 +31,7 @@ function JobDetailModal() {
       setJob(data);
     };
     fetchData();
-  }, []);
+  });
 
   const handleClose = () => {
     navigate(-1);

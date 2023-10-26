@@ -1,12 +1,8 @@
 import "./App.css";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
-import JobDetail from "./pages/JobDetail";
-import RequireAuth from "./auth/RequireAuth";
 import Login from "./pages/Login";
 import LoginModal from "./components/LoginModal";
 import JobDetailModal from "./components/JobDetailModal";
@@ -29,7 +25,6 @@ function App() {
 
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          {/* <Route path="job/:id" element={<JobDetail />} /> */}
           <Route path="login" element={<Login />} />
         </Route>
         <Route

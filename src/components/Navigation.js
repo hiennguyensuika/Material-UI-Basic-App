@@ -1,19 +1,15 @@
-import React, { useContext } from "react";
-// import { useNavigate, useSearchParams } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
-import AuthContext from "../auth/AuthContext";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import { ThemeProvider } from "@mui/material/styles";
 import { useState } from "react";
 import { createTheme } from "@mui/material";
 import Switch from "@mui/material/Switch";
-import { dark } from "@mui/material/styles/createPalette";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -54,10 +50,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function Navigation() {
-  const auth = useContext(AuthContext);
   // {* const [searchParams, setSearchParams] = useSearchParams();*}
   // {const q = searchParams.get("q");}
-  const [darkMode, setDarkMode] = useState(false);
   
   //Define light and dark theme
   const lightTheme = createTheme();
@@ -68,7 +62,7 @@ function Navigation() {
   })
 
   //Track the current theme
-  const [isDarkMode, setIsDarkMode] = React.useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const theme = isDarkMode ? darkTheme : lightTheme;
 
   const handleDarkModeChange = () => {

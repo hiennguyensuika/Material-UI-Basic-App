@@ -5,10 +5,9 @@ import Container from "@mui/material/Container";
 import api from "../data/fetchData";
 import Pagination from "@mui/material/Pagination";
 import { styled } from "@mui/material/styles";
-import { useSearchParams } from "react-router-dom";
 import { Typography } from "@mui/material";
 
-const CentterPagination = styled(Pagination)(({ theme }) => ({
+const CenterPagination = styled(Pagination)(({theme}) => ({
   ul: {
     justifyContent: "center",
   },
@@ -18,17 +17,15 @@ function Home() {
   const [jobs, setJobs] = useState([]);
   const [pagesTotal, setPagesTotal] = useState(0);
   const [page, setPage] = useState(1);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const q = searchParams.get("q");
 
   useEffect(() => {
     const fetch = async () => {
-      const data = await api.getJobs(page, q);
+      const data = await api.getJobs(page);
       setJobs(data.jobs);
       setPagesTotal(data.pagesTotal);
     };
     fetch();
-  }, [page, q]);
+  }, [page]);
 
   return (
     <Container sx={{ p: 3 }} maxWidth="lg">
@@ -46,7 +43,7 @@ function Home() {
               </Grid>
             ))}
           </Grid>
-          <CentterPagination
+          <CenterPagination
             sx={{ marginTop: "15px" }}
             count={pagesTotal}
             color="primary"

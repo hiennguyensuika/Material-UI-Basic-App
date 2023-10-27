@@ -1,7 +1,7 @@
 import jobs from "./jobs.json";
 
 async function getJobs(page, q = null) {
-  const promise = new Promise((resolve, reject) => {
+  const promise = new Promise((resolve) => {
     setTimeout(() => {
       resolve();
     }, 100);
@@ -24,7 +24,7 @@ async function getJobs(page, q = null) {
 }
 
 async function getJob(id) {
-  const promise = new Promise((resolve, reject) => {
+  const promise = new Promise((resolve) => {
     setTimeout(() => {
       resolve();
     }, 100);
